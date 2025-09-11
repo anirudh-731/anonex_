@@ -108,7 +108,6 @@ export default function Home() {
           </p>
         </a>
       </div>
-      <div className='text-black text-lg font-bold bg-yellow-500'>heyyy</div>
     </main>
   )
 }
