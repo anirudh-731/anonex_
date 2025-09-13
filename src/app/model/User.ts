@@ -23,7 +23,7 @@ export interface User extends Document {
   password: string;
   verifyCode: string;
   verifyCodeExpiry: Date; 
-  isVerified: boolean;
+  isVerified: boolean;      
   isAcceptingMessages: boolean;
   messages: Message[];
 }
@@ -70,3 +70,5 @@ const UserModel =
   mongoose.model<User>('User', UserSchema);
 
 export default UserModel;
+
+
