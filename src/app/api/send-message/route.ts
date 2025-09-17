@@ -1,5 +1,5 @@
 import UserModel from '@/app/model/User';
-import dbConnect from '@/app/lib/dbConnect';
+import dbConnect from '@/lib/dbConnect';
 import { Message } from '@/app/model/User';
 
 export async function POST(request: Request) {
