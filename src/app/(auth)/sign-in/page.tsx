@@ -6,6 +6,7 @@ import * as z from 'zod';
 import { signIn } from 'next-auth/react';
 import {
   Form,
+  FormControl,
   FormField,
   FormItem,
   FormLabel,
@@ -16,7 +17,7 @@ import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/components/ui/use-toast';
-import { signInSchema } from '@/app/schemas/signInSchema';
+import { signInSchema } from '@/schemas/signInSchema';
 
 export default function SignInForm() {
   const router = useRouter();
@@ -63,7 +64,7 @@ export default function SignInForm() {
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
-            Welcome Back to True Feedback
+            Welcome Back to Anonex
           </h1>
           <p className="mb-4">Sign in to continue your secret conversations</p>
         </div>
@@ -75,7 +76,9 @@ export default function SignInForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Email/Username</FormLabel>
-                  <Input {...field} />
+                  <FormControl>
+                  <Input placeholder="email/username"{...field} />
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
@@ -86,7 +89,9 @@ export default function SignInForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Password</FormLabel>
-                  <Input type="password" {...field} />
+                  <FormControl>
+                  <Input type="password" placeholder="password" {...field} />
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}

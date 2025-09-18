@@ -1,6 +1,6 @@
 'use client'
-import { verifySchema } from '@/app/schemas/verifySchema'
-import { ApiResponse } from '@/app/types/ApiResponse'
+import { verifySchema } from '@/schemas/verifySchema'
+import { ApiResponse } from '@/types/ApiResponse'
 import { Button } from '@/components/ui/button'
 import { FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
@@ -27,7 +27,7 @@ const VerifyAccount = () => {
 
     const onSubmit = async (data: z.infer<typeof verifySchema>) => {
             try {
-              const response = await axios.post(`http://localhost:3000/api/verify-code`, {
+              const response = await axios.post(`/api/verify-code`, {
                     username: params.username,
                     code: data.code
                 })
